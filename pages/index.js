@@ -1,9 +1,12 @@
 import React from 'react'
+import EventList from './components/eventList'
+import { getAllEvents } from '../data/DummyData'
 
 const HomePage = () => {
+  const events=getAllEvents()
   return (
     <div>
-      home page
+      <EventList items={events} />
     </div>
   )
 }
