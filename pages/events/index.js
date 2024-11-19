@@ -5,7 +5,7 @@ const EventsPage = () => {
   const events=getAllEvents()
   return (
     <div>
-    <EventList items={events}/>
+        <EventList items={events}/>
     </div>
   )
 }
