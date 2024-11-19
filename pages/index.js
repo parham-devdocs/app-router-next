@@ -1,5 +1,5 @@
 import React from 'react'
-import EventList from './components/eventList'
+import EventList from '../components/eventList'
 import { getAllEvents } from '../data/DummyData'
 
 const HomePage = () => {

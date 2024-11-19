@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import classes from "./event.item.module.css";
+import Button from "./ui/button";
+import ArrowIcon from "./icons/arrow-right-icon";
+import LocationIcon from "./icons/location-icon";
+import DateIcon from "./icons/date-icon";
 const EventItem = ({ title, image, location, date, id }) => {
   const formattedAddress = location.replace(",", "\n");
   const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
@@ -16,14 +20,22 @@ const EventItem = ({ title, image, location, date, id }) => {
         <div className={classes.summary}>
           <h2>{title}</h2>
           <div className={classes.date}>
+            <DateIcon />
             <time>{humanReadableDate}</time>
           </div>
           <div className={classes.address}>
+            <LocationIcon />
+
             <address>{formattedAddress}</address>
           </div>
         </div>
         <div className={classes.actions}>
-          <Link href={`/evnets/${id}`}>Explore Event</Link>
+          <Button link={`/events/${id}`}>
+            <span>Explore Event</span>
+            <span className={classes.icon}>
+              <ArrowIcon />
+            </span>
+          </Button>
         </div>
       </div>
     </li>
