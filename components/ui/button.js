@@ -5,7 +5,7 @@ const Button = ({ link, children,onclick }) => {
   if (link) {
       return <Link href={link}>{children}</Link>;
   }
-  <button className={classes.btn} onClick={onclick}>{ children }</button>
+ return <button className={classes.btn} onClick={onclick}>{ children }</button>
 }
 
 export default Button
