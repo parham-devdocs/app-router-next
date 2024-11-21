@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { getFilteredEvents } from "../../data/DummyData";
 import EventList from "../../components/eventList";
+import ResultTitle from "../../components/event-detail/result-title";
 
 const SpecialEvent = () => {
 
@@ -21,7 +22,9 @@ const SpecialEvent = () => {
     setTimeout(()=>{router.replace("/events")},3000)
     return <p className=" center">no event found</p>
   }
-  return <div><EventList items={filteredEvent}/></div>;
+  return <div>
+    <ResultTitle date={`${year}-${month}`}/>
+    <EventList items={filteredEvent} /></div>;
 };
 
 export default SpecialEvent;
