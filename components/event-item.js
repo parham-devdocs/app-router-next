@@ -6,13 +6,8 @@ import Button from "./ui/button";
 import ArrowIcon from "./icons/arrow-right-icon";
 import LocationIcon from "./icons/location-icon";
 import DateIcon from "./icons/date-icon";
-const EventItem = ({ title, image, location, date, id }) => {
-  const formattedAddress = location.replace(",", "\n");
-  const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+const EventItem = ({ title, image, price, category, id }) => {
+ 
   return (
     <li className={classes.item}>
       <Image src={`/${image}`} alt={title} width={150} height={100} />
@@ -21,12 +16,12 @@ const EventItem = ({ title, image, location, date, id }) => {
           <h2>{title}</h2>
           <div className={classes.date}>
             <DateIcon />
-            <time>{humanReadableDate}</time>
+            <p>{ category }</p>
           </div>
           <div className={classes.address}>
             <LocationIcon />
 
-            <address>{formattedAddress}</address>
+            <p>{ price} $</p>
           </div>
         </div>
         <div className={classes.actions}>
