@@ -9,7 +9,7 @@ const SingleEvent = () => {
   const router = useRouter();
   console.log(router.query);
   const event = getEventById(router.query.id);
-  console.log(event.date);
+  
   if (!event) {
     return <h1>event not found</h1>;
   }
