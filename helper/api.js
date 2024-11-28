@@ -10,3 +10,14 @@ export default async function getAllEvents() {
 
   return events;
 }
+
+export async function getEventById(id) {
+  const events = await getAllEvents();
+
+
+
+  const filteredEvents = events.find((e) => e.id === Number(id)) // Use strict equality
+ console.log(filteredEvents)
+
+  return filteredEvents;
+}

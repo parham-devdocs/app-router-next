@@ -6,26 +6,17 @@ import LogisticsItem from "./logistics-item";
 import classes from "./event-logistics.module.css";
 
 function EventLogistics(props) {
-  const { date, address, image, imageAlt } = props;
-
-  const humanReadableDate = new Date(date).toLocaleDateString("en-US", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-  const addressText = address.replace(", ", "\n");
+  const { title, price, category,image } = props;
 
   return (
     <section className={classes.logistics}>
       <div className={classes.image}>
-        <Image src={`/${image}`} alt={imageAlt} width={400} height={400} />
+        <Image src={`/${image}`} alt={image} width={400} height={400} />
       </div>
       <ul className={classes.list}>
-        <LogisticsItem icon={DateIcon}>
-          <time>{humanReadableDate}</time>
-        </LogisticsItem>
+        <LogisticsItem icon={DateIcon}>{category}</LogisticsItem>
         <LogisticsItem icon={AddressIcon}>
-          <address>{addressText}</address>
+          <address>{ price }</address>
         </LogisticsItem>
       </ul>
     </section>
